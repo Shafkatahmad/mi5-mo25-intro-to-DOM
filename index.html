@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
 
     <style>
-      li {
+      .fruits-container li {
         color: tomato;
       }
       #fruits-title {
@@ -39,7 +39,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="fruits-container">
         <h1 id="fruits-title">Fruits I like</h1>
         <ul>
           <li>Apple</li>
@@ -61,6 +61,7 @@
 
     <script src="./js/dom.js"></script>
     <script>
+      // option-1: getElementsByTagName
       const liCollection = document.getElementsByTagName("li");
       // console.log(liCollection);
       for (const li of liCollection) {
@@ -72,12 +73,21 @@
         // console.log(h1.innerText);
       }
 
+      // option-2: getElementById
       const fruitsTitle = document.getElementById("fruits-title");
       fruitsTitle.innerText = "Fruits changed by JS";
 
+      // option-3: getElementsByClassName
       const places = document.getElementsByClassName("important-places");
       for (const place of places) {
         console.log(place.innerText);
+      }
+
+      // option-4: querySelector
+      // option-5: querySelectorAll
+      const someLi = document.querySelectorAll(".fruits-container li");
+      for (const li of someLi) {
+        console.log(li.innerText);
       }
     </script>
   </body>

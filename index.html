@@ -40,7 +40,9 @@
       </section>
 
       <section class="fruits-container">
-        <h1 id="fruits-title">Fruits I like</h1>
+        <h1 id="fruits-title" class="some-class random-class blue-bg">
+          Fruits I like
+        </h1>
         <ul>
           <li>Apple</li>
           <li>Banana</li>
@@ -80,15 +82,45 @@
       // option-3: getElementsByClassName
       const places = document.getElementsByClassName("important-places");
       for (const place of places) {
-        console.log(place.innerText);
+        // console.log(place.innerText);
       }
 
-      // option-4: querySelector
+      // innerHTML
+      // console.log(
+      //   document.getElementsByClassName("fruits-container")[0].innerHTML
+      // );
+      // console.log(
+      //   (document.getElementsByClassName("fruits-container")[0].innerHTML =
+      //     "<h2>ABC wow DOM is changingg</h2>")
+      // );
+
+      // // innerText
+      // console.log(
+      //   document.getElementsByClassName("fruits-container")[0].innerText
+      // );
+
+      // option-4: querySelector --> only returns the first element of the selector
+      const firstLi = document.querySelector(".fruits-container li");
+      // console.log(firstLi);
+
       // option-5: querySelectorAll
       const someLi = document.querySelectorAll(".fruits-container li");
       for (const li of someLi) {
-        console.log(li.innerText);
+        // console.log(li.innerText);
       }
+
+      // setAttribute
+      // let title = document.getElementById("fruits-title");
+      // title.getAttribute("class");
+
+      // innerHtml
+      // document.getElementsByClassName("fruits-container")[0].innerText;
+
+      // getAttribute and setAttribute
+      const title = document.getElementById("fruits-title");
+      // console.log(title.getAttribute("class"));
+      // console.log(title.classList);
+      // title.setAttribute("title", "tooltip set By Javascript");
     </script>
   </body>
 </html>
